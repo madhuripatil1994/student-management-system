@@ -15,40 +15,40 @@ You will also see any lint errors in the console.
 ### Tasks
 
 1. Login 
-    Done - HTML Component View
+    - Done HTML Component View
     - Validation and Error Message
     - On Suceessful Login Redirect to Authrntic pages
     
-2. Student
-    a. Add Student
-        Done - Create HTML Component View
-        - Add student to common bucket
-        - Validation on form
+2. Student <br>
+    a. Add Student <br>
+        - Done Create HTML Component View <br>
+        - Add student to common bucket <br>
+        - Validation on form <br>
 
-    b. View Studnet
-        - HTML component View
-        - Actions on delete/details
+    b. View Studnet <br>
+        - HTML component View <br>
+        - Actions on delete/details <br>
    
-    c. Student Details
-        - Pop up to show student Details
-        - action to close modal
+    c. Student Details<br>
+        - Pop up to show student Details <br>
+        - action to close modal <br>
 
 
-3. Teacher
-    a. Add Teacher
-        - Create HTML Component View
-        - Add Teacher to common bucket
-        - Validation on form
+3. Teacher <br>
+    a. Add Teacher <br>
+        - Create HTML Component View <br>
+        - Add Teacher to common bucket<br>
+        - Validation on form <br>
 
-    b. View Teacher
-        - HTML component View
-        - Actions on delete/details
+    b. View Teacher <br>
+        - HTML component View <br>
+        - Actions on delete/details <br>
    
-   c. Teacher Details
-        - Pop up to show Teacher Details
-        - action to close modal
+   c. Teacher Details <br>
+        - Pop up to show Teacher Details <br>
+        - action to close modal <br>
 
-4. Common Tasks
-    Done - Header
-    Done - Footer
-    Done - Layout 
+4. Common Tasks <br>
+    Done - Header <br>
+    Done - Footer <br>
+    Done - Layout <br>
