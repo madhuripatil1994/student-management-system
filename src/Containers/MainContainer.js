@@ -11,7 +11,6 @@ class MainContainer extends React.Component {
 
     constructor(props){
         super(props);
-        console.log(this.props.isLoggedIn);
     }
 
     render(){
@@ -20,13 +19,16 @@ class MainContainer extends React.Component {
             <div>
                     {
                         this.props.view == 0 && 
-                        <AddStudent /> 
+                        <AddStudent 
+                        addStudent = {this.props.addStudent}
+                        changeView = {this.props.changeView}/> 
                     }
 
                     {
                         this.props.view == 1 && 
                         <ViewStudents 
-                        students = {this.props.students}/> 
+                        students = {this.props.students}
+                        /> 
                     }  
 
                     {

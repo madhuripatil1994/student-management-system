@@ -15,9 +15,9 @@ You will also see any lint errors in the console.
 ### Tasks
 
 1. Login 
-    - Done HTML Component View
-    - Validation and Error Message
-    - On Suceessful Login Redirect to Authrntic pages
+    - Done - HTML Component View
+    - Done - Validation and Error Message
+    - Done - On Suceessful Login Redirect to Authrntic pages
     
 2. Student <br>
     a. Add Student <br>

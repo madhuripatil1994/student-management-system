@@ -14,12 +14,7 @@ class App extends Component {
     this.state = {
       view : 0,
       isLoggedIn: true,
-      students: [{
-        firstName:"Madhuri",
-        lastName:"Patil",
-        class:"12th",
-        teacher:"ABC"
-      }]
+      students: null
     }
 
   }
@@ -40,6 +35,17 @@ class App extends Component {
     );
   }
 
+  addStudent(students){
+    var  updatedStudentList = this.state.students;
+    updatedStudentList.push(students);
+    this.setState(
+      {
+        students : updatedStudentList
+      }
+    );
+    console.log(this.state.students);
+  }
+
   render() {
     return (
       <div className="App">
@@ -57,6 +63,8 @@ class App extends Component {
                 view = {this.state.view}
                 isLoggedIn = {this.state.isLoggedIn}
                 students = {this.state.students} 
+                addStudent = {this.addStudent.bind(this)}
+                changeView = {this.changeView.bind(this)}
                 />
               : < SignIn 
              changeLoggedIn = {this.changeLoggedIn.bind(this)}/>
