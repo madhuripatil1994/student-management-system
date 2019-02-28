@@ -5,7 +5,8 @@ import ViewStudents from './view-students/ViewStudents';
 import AddTeacher from './add-teacher/AddTeacher';
 import ViewTeachers from './view-teachers/ViewTeachers';
 import SignIn from './sign-in/SignIn';
-
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import Header from './../Components/Header'
 
 class MainContainer extends React.Component {
 
@@ -15,37 +16,18 @@ class MainContainer extends React.Component {
 
     render(){
         return(
+            <Router>
+                <div>
+                    <Header />
+                    <Route path="/add-student" component={AddStudent}></Route>
+                    <Route path="/view-student" component={ViewStudents}></Route>
+                    <Route path="/add-teacher" component={AddTeacher}></Route>
+                    <Route path="/view-teacher" component={ViewTeachers}></Route>
+                </div>
+            </Router>
            
-            <div>
-                    {
-                        this.props.view == 0 && 
-                        <AddStudent 
-                        addStudent = {this.props.addStudent}
-                        changeView = {this.props.changeView}
-                        /> 
-                    }
-
-                    {
-                        this.props.view == 1 && 
-                        <ViewStudents 
-                        students = {this.props.students}
-                        deleteStudent ={this.props.deleteStudent}
-                        /> 
-                    }  
-
-                    {
-                        this.props.view == 2 && 
-                        <AddTeacher 
-                        addTeacher ={this.props.addTeacher}
-                        changeView = {this.props.changeView}/>
-                    }         
-                    {
-                        this.props.view == 3 && 
-                        <ViewTeachers 
-                        teachers = {this.props.teachers}
-                        deleteTeacher ={this.props.deleteTeacher}/>
-                    }
-            </div>
+                    
+            
         );
     }
 }

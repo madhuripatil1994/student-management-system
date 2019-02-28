@@ -107,14 +107,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header
-        changeView = {this.changeView.bind(this)}
-        isLoggedIn = {this.state.isLoggedIn}
-        changeLoggedIn = {this.changeLoggedIn.bind(this)}/>
+        {/* <Header
+          changeView = {this.changeView.bind(this)}
+          isLoggedIn = {this.state.isLoggedIn}
+          changeLoggedIn = {this.changeLoggedIn.bind(this)}/> */}
         
         <div className="row">
-        <div className="col-sm-3"></div>
-            <div className="col-sm-6 main-container">
+            <div className="col-sm-12 main-container">
             {
               this.state.isLoggedIn ?
               <MainContainer 
