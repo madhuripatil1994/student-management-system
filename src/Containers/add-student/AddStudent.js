@@ -73,10 +73,12 @@ class AddStudent extends React.Component {
                       </select>
                     </div>
                     <div className="form-group row">
-                    <label className="col-sm-2 col-form-label">Teacher</label>
+                    <label className="col-sm-2 col-form-label">Select Teacher</label>
                       <div className="col-sm-10">
-                        <input type="text" className="form-control" id="inputPassword3" placeholder="Enter Teacher"
-                        onChange = {this.onChange.bind(this,'teacher')}></input>
+                      <select className="col-sm-10  orm-control" id="sel1"  onChange ={this.onChange.bind(this,'teacher')}>
+                        <option>ABC</option>
+                        <option>XYZ</option>
+                      </select>
                       </div>
                     </div>
                     <div className="form-group row">

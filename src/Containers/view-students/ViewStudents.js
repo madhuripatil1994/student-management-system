@@ -31,7 +31,7 @@ class ViewStudents extends React.Component {
       this.props.students.map(function(student, index){
         return (
           <tr key ={index}>
-      <th scope="row">1</th>
+      <th scope="row">{index}</th>
       <td>{student.firstName}</td>
       <td>{student.lastName}</td>
       <td>{student.class}</td>

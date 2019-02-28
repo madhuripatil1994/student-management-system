@@ -35,11 +35,15 @@ class MainContainer extends React.Component {
 
                     {
                         this.props.view == 2 && 
-                        <AddTeacher />
+                        <AddTeacher 
+                        addTeacher ={this.props.addTeacher}
+                        changeView = {this.props.changeView}/>
                     }         
                     {
                         this.props.view == 3 && 
-                        <ViewTeachers />
+                        <ViewTeachers 
+                        teachers = {this.props.teachers}
+                        deleteTeacher ={this.props.deleteTeacher}/>
                     }
             </div>
         );

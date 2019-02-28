@@ -21,6 +21,13 @@ class App extends Component {
           class: 10,
           teacher: 'xyz'
         }
+      ],
+      teachers : [
+        {
+          firstName: "Madhuri",
+          lastName: 'Patil',
+          subject : 'Maths'
+        }
       ]
     }
 
@@ -42,15 +49,25 @@ class App extends Component {
     );
   }
 
-  addStudent(students){
+  addStudent(student){
     var  updatedStudentList = this.state.students;
-    updatedStudentList.push(students);
+    updatedStudentList.push(student);
     this.setState(
       {
         students : updatedStudentList
       }
     );
     console.log(this.state.students);
+  }
+
+  addTeacher(teacher){
+    var  updatedTeacherList = this.state.teachers;
+    updatedTeacherList.push(teacher);
+    this.setState(
+      {
+        teachers : updatedTeacherList
+      }
+    );
   }
 
   deleteStudent(index){
@@ -66,6 +83,23 @@ class App extends Component {
     this.setState(
       {
         students :updatedStudentList
+      }
+    );
+  }
+
+  deleteTeacher(index){
+
+    var updatedTeacherList = this.state.teachers;
+    this.state.teachers.forEach(function(student,originalIndex){
+
+      if(index == originalIndex){
+        updatedTeacherList.pop(index)
+      }
+
+    });
+    this.setState(
+      {
+        teachers :updatedTeacherList
       }
     );
   }
@@ -86,10 +120,13 @@ class App extends Component {
               <MainContainer 
                 view = {this.state.view}
                 isLoggedIn = {this.state.isLoggedIn}
-                students = {this.state.students} 
-                addStudent = {this.addStudent.bind(this)}
                 changeView = {this.changeView.bind(this)}
+                students = {this.state.students} 
+                teachers = {this.state.teachers} 
+                addStudent = {this.addStudent.bind(this)}
                 deleteStudent ={this.deleteStudent.bind(this)}
+                addTeacher ={this.addTeacher.bind(this)}
+                deleteTeacher ={this.deleteTeacher.bind(this)}
                 />
               : < SignIn 
              changeLoggedIn = {this.changeLoggedIn.bind(this)}/>
