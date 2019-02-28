@@ -6,10 +6,14 @@ class ViewStudents extends React.Component {
         super(props);
         console.log(this.props.students);
     }
+
+    deleteStudent(index){
+      this.props.deleteStudent(index);
+    }
+
      render(){
+       var that =this;
             return(<div>
-    {
-        this.props.students != null ?
         <table className="table">
   <thead className="thead-dark">
     <tr>
@@ -23,23 +27,28 @@ class ViewStudents extends React.Component {
     </tr>
   </thead>
   <tbody>
-    <tr>
+    {
+      this.props.students.map(function(student, index){
+        return (
+          <tr key ={index}>
       <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>xyz</td>
+      <td>{student.firstName}</td>
+      <td>{student.lastName}</td>
+      <td>{student.class}</td>
+      <td>{student.teacher}</td>
       <td>
-      <button type="submit" className="btn btn-danger">Delete</button>
+      <button type="submit" className="btn btn-danger" onClick={that.deleteStudent.bind(that,index)}>Delete</button>
       </td>
       <td>
       <button type="submit" className="btn btn-primary">View</button>
       </td>
     </tr>
-  </tbody>
-</table> :
-    <div>Data not avialable</div>
+        )
+      })
     }
+    
+  </tbody>
+</table>
     </div>);
         }
 }

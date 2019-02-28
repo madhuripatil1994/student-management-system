@@ -21,12 +21,12 @@ You will also see any lint errors in the console.
     
 2. Student <br>
     a. Add Student <br>
-        - Done Create HTML Component View <br>
-        - Add student to common bucket <br>
-        - Validation on form <br>
+        - Done - Create HTML Component View <br>
+        - Done - Add student to common bucket <br>
+        - Done - Validation on form <br>
 
     b. View Studnet <br>
-        - HTML component View <br>
+        - Done - HTML component View <br>
         - Actions on delete/details <br>
    
     c. Student Details<br>

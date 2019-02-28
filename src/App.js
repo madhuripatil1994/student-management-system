@@ -14,7 +14,14 @@ class App extends Component {
     this.state = {
       view : 0,
       isLoggedIn: true,
-      students: null
+      students:[
+        {
+          firstName: "Madhuri",
+          lastName: 'Patil',
+          class: 10,
+          teacher: 'xyz'
+        }
+      ]
     }
 
   }
@@ -46,6 +53,23 @@ class App extends Component {
     console.log(this.state.students);
   }
 
+  deleteStudent(index){
+
+    var updatedStudentList = this.state.students;
+    this.state.students.forEach(function(student,originalIndex){
+
+      if(index == originalIndex){
+        updatedStudentList.pop(index)
+      }
+
+    });
+    this.setState(
+      {
+        students :updatedStudentList
+      }
+    );
+  }
+
   render() {
     return (
       <div className="App">
@@ -65,6 +89,7 @@ class App extends Component {
                 students = {this.state.students} 
                 addStudent = {this.addStudent.bind(this)}
                 changeView = {this.changeView.bind(this)}
+                deleteStudent ={this.deleteStudent.bind(this)}
                 />
               : < SignIn 
              changeLoggedIn = {this.changeLoggedIn.bind(this)}/>

@@ -7,10 +7,10 @@ class AddStudent extends React.Component {
 
     this.state = {
       student : {
-        firstName: null,
-        lastName: null,
-        class: null,
-        teacher: null
+        firstName: "Madhuri",
+        lastName: "Patil",
+        class: 10,
+        teacher: "xyz"
       }
     }
   }
@@ -31,7 +31,8 @@ class AddStudent extends React.Component {
 
   addStudent(){
    
-    if(this.isValidstudent(this.state.student.firstName, this.state.student.lastName)){
+    if(this.isValidstudent(this.state.student.firstName, this.state.student.lastName))
+    {
       this.props.addStudent(this.state.student);
       this.props.changeView(1);
     } else {
