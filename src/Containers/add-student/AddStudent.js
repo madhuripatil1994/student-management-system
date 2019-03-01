@@ -6,7 +6,7 @@ class AddStudent extends React.Component {
 
   constructor(props){
     super(props)
-
+    console.log(this.props);
     this.state = {
       student : {
         firstName: "",
@@ -18,7 +18,6 @@ class AddStudent extends React.Component {
   }
       
   onChange(key, event) {
-    
     var currentStudent = this.state.student;
       currentStudent[key] = event.currentTarget.value;
         this.setState({
@@ -29,9 +28,12 @@ class AddStudent extends React.Component {
   addStudent(){
     if(this.isValidstudent(this.state.student.firstName,this.state.student.lastName)) {
       addStudent(this.state.student);
+      this.props.history.push("/view-student");
     } else{
       alert("Add details");
     }
+
+
   }
 
   isValidstudent(firstName, lastName){

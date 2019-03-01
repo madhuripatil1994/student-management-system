@@ -1,5 +1,6 @@
 import React from 'react';
 import {viewTeachers,deleteTeacher} from './../../Utils/loclstorage'
+import NoDataAvailable from './../../Components/NoDataAvailable'
 
 class ViewTeachers extends React.Component {
 
@@ -7,7 +8,8 @@ class ViewTeachers extends React.Component {
         super(props);
 
         this.state = {
-          teachers : []
+          teachers : [],
+          message : "Teachers"
         }
     }
 
@@ -26,10 +28,18 @@ class ViewTeachers extends React.Component {
          teachers
       })
     }
+
+    viewDetails(index){
+      this.props.history.push("/teacher/"+index);
+      
+    }
         render(){
             var that =this;
             return(<div>
-                    <table className="table">
+
+              {
+                 this.state.teachers.length !== 0 ?
+                 <table className="table">
                       <thead className="thead-dark">
                         <tr>
                           <th scope="col">#</th>
@@ -53,7 +63,7 @@ class ViewTeachers extends React.Component {
                           <button type="submit" className="btn btn-danger" onClick={that.deleteTeacher.bind(that,index)}>Delete</button>
                           </td>
                           <td>
-                          <button type="submit" className="btn btn-primary">View</button>
+                          <button type="submit" className="btn btn-primary" onClick={that.viewDetails.bind(that,index)}>View</button>
                           </td>
                         </tr>
                             )
@@ -61,7 +71,10 @@ class ViewTeachers extends React.Component {
                         }
                         
                       </tbody>
-              </table>
+              </table> : <NoDataAvailable
+                          message = {this.state.message}/>
+              }
+        
           </div>);
         }
 }

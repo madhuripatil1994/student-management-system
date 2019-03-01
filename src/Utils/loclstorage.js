@@ -13,7 +13,7 @@ var addStudent = (student) => {
 var getStudents = () => {
     var students = localStorage.getItem("students");
     var studentsObject = JSON.parse(students);
-    return studentsObject;
+    return studentsObject ? studentsObject: [];
 }
 
 var deleteStudent = (index) => {
@@ -44,8 +44,9 @@ var addTeacher = (teacher) =>{
 var viewTeachers = () => {
     var teachers = localStorage.getItem("teachers");
     var teachersObjet = JSON.parse(teachers);
+  
     
-    return teachersObjet;
+    return teachersObjet ? teachersObjet : [];
 }
 
 var deleteTeacher = (index) =>{
@@ -63,11 +64,19 @@ var deleteTeacher = (index) =>{
     localStorage.setItem("teachers", JSON.stringify(teachersObjet));
 }
 
+var getTeacherById = (index) => {
+    var teachers = localStorage.getItem("teachers");
+    var teachersObjet = JSON.parse(teachers);
+
+    return teachersObjet[index];
+}
+
 module.exports = {
     addStudent,
     getStudents,
     deleteStudent,
     addTeacher,
     viewTeachers,
-    deleteTeacher
+    deleteTeacher,
+    getTeacherById
 }

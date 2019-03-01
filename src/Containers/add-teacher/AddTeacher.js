@@ -29,6 +29,7 @@ class AddTeacher extends React.Component {
         if(this.isValidTeacher(this.state.teacher.firstName, this.state.teacher.lastName))
         {
           addTeacher(this.state.teacher);
+          this.props.history.push("/view-teacher");
         } else {
           alert("Enter Details");
         }

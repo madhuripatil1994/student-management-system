@@ -1,5 +1,6 @@
 import React from 'react';
-import {getStudents, deleteStudent} from './../../Utils/loclstorage'
+import { getStudents, deleteStudent } from './../../Utils/loclstorage'
+import NoDataAvailable from './../../Components/NoDataAvailable'
 
 
 class ViewStudents extends React.Component {
@@ -9,7 +10,8 @@ class ViewStudents extends React.Component {
         console.log(this.props.students);
 
         this.state ={
-          students :[]
+          students :[],
+          message : "Students"
         }
     }
 
@@ -33,7 +35,9 @@ class ViewStudents extends React.Component {
       
        var that =this;
             return(<div>
-                    <table className="table">
+              {
+                this.state.students.length !== 0 ?
+                <table className="table">
                       <thead className="thead-dark">
                         <tr>
                           <th scope="col">#</th>
@@ -67,7 +71,10 @@ class ViewStudents extends React.Component {
                         }
                         
                       </tbody>
-                    </table>
+                    </table> : <NoDataAvailable
+                          message = {this.state.message}/>
+              }
+                    
                   </div>);
         }
 }
