@@ -24,6 +24,8 @@ You will also see any lint errors in the console.
         - Done - Create HTML Component View <br>
         - Done - Add student to common bucket <br>
         - Done - Validation on form <br>
+        - Work on drop down element of form <br>
+        - View Redirect<br>
 
     b. View Studnet <br>
         - Done - HTML component View <br>

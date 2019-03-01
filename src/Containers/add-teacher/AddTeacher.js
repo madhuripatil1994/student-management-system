@@ -1,4 +1,5 @@
 import React from 'react';
+import { addTeacher } from './../../Utils/loclstorage';
 
 class AddTeacher extends React.Component {
 
@@ -7,9 +8,9 @@ class AddTeacher extends React.Component {
     
         this.state = {
           teacher : {
-            firstName: null,
-            lastName: null,
-            subject: null
+            firstName: "",
+            lastName: "",
+            subject: ""
           }
         }
       }
@@ -27,8 +28,7 @@ class AddTeacher extends React.Component {
    
         if(this.isValidTeacher(this.state.teacher.firstName, this.state.teacher.lastName))
         {
-          this.props.addTeacher(this.state.teacher);
-          this.props.changeView(3);
+          addTeacher(this.state.teacher);
         } else {
           alert("Enter Details");
         }
@@ -67,7 +67,7 @@ class AddTeacher extends React.Component {
                     </div>
                     <div className="form-group row">
                       <div className="col-sm-10">
-                        <button type="submit" className="btn btn-primary" onClick ={this.addTeacher.bind(this)}>Add Teacher</button>
+                        <button type="button" className="btn btn-primary" onClick ={this.addTeacher.bind(this)}>Add Teacher</button>
                       </div>
                     </div>
                   </form>

@@ -16,12 +16,7 @@ class AddStudent extends React.Component {
       }
     }
   }
-        
-  /*onChange = (event) => {
-    console.log('events', event);
-    // event.currentTarget.value 
-  }*/
-
+      
   onChange(key, event) {
     
     var currentStudent = this.state.student;
@@ -32,7 +27,11 @@ class AddStudent extends React.Component {
   }
 
   addStudent(){
-    addStudent(this.state.student);
+    if(this.isValidstudent(this.state.student.firstName,this.state.student.lastName)) {
+      addStudent(this.state.student);
+    } else{
+      alert("Add details");
+    }
   }
 
   isValidstudent(firstName, lastName){

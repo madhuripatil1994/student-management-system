@@ -1,18 +1,33 @@
 import React from 'react';
+import {viewTeachers,deleteTeacher} from './../../Utils/loclstorage'
 
 class ViewTeachers extends React.Component {
 
     constructor(props){
         super(props);
+
+        this.state = {
+          teachers : []
+        }
     }
 
     deleteTeacher(index){
-      this.props.deleteTeacher(index);
+      deleteTeacher(index);
+      this.getTeachers();
     }
 
+    componentWillMount(){
+      this.getTeachers();
+    }
+
+    getTeachers(){
+      var teachers = viewTeachers();
+      this.setState({
+         teachers
+      })
+    }
         render(){
             var that =this;
-            var teachers =[];
             return(<div>
                     <table className="table">
                       <thead className="thead-dark">
@@ -27,7 +42,7 @@ class ViewTeachers extends React.Component {
                       </thead>
                       <tbody>
                         {
-                          teachers.map(function(teacher, index){
+                          this.state.teachers.map(function(teacher, index){
                             return (
                               <tr key ={index}>
                           <th scope="row">{index}</th>
