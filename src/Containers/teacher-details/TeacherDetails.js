@@ -19,7 +19,7 @@ class TeacherDetails extends React.Component {
     }
 
     redirectView(){
-        this.props.history.push("/edit-teacher");
+        this.props.history.push("/edit-teacher" + this.props.match.params.id);
     }
     render(){
         return(<div>
